@@ -5,3 +5,8 @@ if(!function_exists('asset')){
         return $_ENV['BASE_URL'].$path;
     }
 }
+if(!function_exists('url')){
+    function url($uri){
+        return $_ENV['BASE_URL'].$uri;
+    }
+}

@@ -2,12 +2,25 @@
 namespace Fpt\ThoiTrang\Controllers\Admin;
 
 use Fpt\ThoiTrang\Commons\Controller;
+use Fpt\ThoiTrang\Commons\Helper;
+use Fpt\ThoiTrang\Models\User;
 
 class UserController extends Controller
 {
+   private User $user;
+   public function __construct()
+   {
+      $this->user = new User;
+   }
    public function index()
    {
-  
+      [$users, $totalPage] = $this->user->paginate($_GET['page '] ?? 1);
+      //   Helper::debug($totalPage);
+      $this->renderViewAdmin('users.index', [
+         'users'=>$users,
+        'totalPage'=> $totalPage
+      ]);
+
    }
    public function store()
    {
@@ -33,8 +46,10 @@ class UserController extends Controller
    }
    public function delete($id)
    {
-      echo __DIR__ . '@' . __FUNCTION__ . $id;
-      ;
+      $this->user->delete($id);
+      
+    header('Location:'.url('admin/users'));
+    exit();
    }
 
 }
