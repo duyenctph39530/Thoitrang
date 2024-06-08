@@ -1,5 +1,6 @@
 <?php
 use Fpt\ThoiTrang\Controllers\Admin\DashboardController;
+use Fpt\ThoiTrang\Controllers\Admin\ProductController;
 use Fpt\ThoiTrang\Controllers\Admin\UserController;
 
 $router->mount('/admin', function () use ($router) {

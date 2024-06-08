@@ -77,11 +77,11 @@ class Model
 
     public function insert(array $data)
     {
-        // $data = [
-        //     'name' => 'Ahihi',
-        //     'email' => 'keke@gnai.com',
-        //     'address' => 'HN'
-        // ];
+        $data = [
+            'name' => 'Ahihi',
+            'email' => 'keke@gnai.com',
+            'address' => 'HN'
+        ];
 
         if (!empty($data)) {
             $query = $this->queryBuilder->insert($this->tableName);

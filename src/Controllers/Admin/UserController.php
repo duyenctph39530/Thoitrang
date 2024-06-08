@@ -2,7 +2,6 @@
 namespace Fpt\ThoiTrang\Controllers\Admin;
 
 use Fpt\ThoiTrang\Commons\Controller;
-use Fpt\ThoiTrang\Commons\Helper;
 use Fpt\ThoiTrang\Models\User;
 
 class UserController extends Controller
@@ -14,6 +13,11 @@ class UserController extends Controller
    }
    public function index()
    {
+      // $users = $this->user->insert($data = [
+      //    'name' => 'Ahihi',
+      //    'email' => 'keke@gnai.com',
+      //    'address' => 'HN'
+      // ]);
       [$users, $totalPage] = $this->user->paginate($_GET['page '] ?? 1);
       //   Helper::debug($totalPage);
       $this->renderViewAdmin('users.index', [
@@ -47,9 +51,9 @@ class UserController extends Controller
    public function delete($id)
    {
       $this->user->delete($id);
-      
-    header('Location:'.url('admin/users'));
-    exit();
+
+      header('Location:' . url('admin/users'));
+      exit();
    }
 
 }
