@@ -2,7 +2,12 @@
 @section('title')
 Danh sách Sản Phẩm
 @endsection
+@section('add')
+<a href="{{ url('admin/products/create')}}" class="btn btn-primary">Thêm</a>
+
+@endsection
 @section('content')
+
 <table border="1" class="table table-striped">
     <thead>
         <tr>

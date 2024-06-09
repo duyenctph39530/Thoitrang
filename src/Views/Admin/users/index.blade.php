@@ -2,6 +2,9 @@
 @section('title')
 Danh sách User
 @endsection
+@section('add')
+<a href="{{ url('admin/users/creater')}}" class="btn btn-primary">Thêm</a>
+@endsection
 @section('content')
 <table class="table table-striped">
         <thead>
